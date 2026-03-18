@@ -43,7 +43,16 @@ einops  0.3.0
 
 ## 模型结构
 
-图三
+模型采用BIT_Transformer,基于ResNet18作为backbone，引入Transformer编码器-解码器结构提取语义token，最终通过特征差分和上采样得到变化图。
+
+**数据流**：
+- 输入：两幅256*256 RGB影像
+- backbone输出：32通道 64*64 特征图
+- 语义token：4个token，每个32维
+- Transformer处理后，特征图上采样至256*256
+- 分类头输出2通道变化概率图
+
+图五
 
 ## 训练好的权重
 
@@ -67,6 +76,21 @@ einops  0.3.0
 ## 结果展示
 
 图四
+
+## 训练
+
+训练命令：
+```bash
+python main_cd.py --img_size ${img_size} --checkpoint_root ${checkpoint_root} --lr_policy ${lr_policy} --split ${split} --split_val ${split_val} --net_G ${net_G} --gpu_ids ${gpus} --max_epochs ${max_epochs} --project_name ${project_name} --batch_size ${batch_size} --data_name ${data_name}  --lr ${lr}
+```
+
+**主要参数：**
+
+- batch_size:8
+- max_epochs:200
+- lr:0.001
+
+图六
 
 ## 测试我自己的数据
 
