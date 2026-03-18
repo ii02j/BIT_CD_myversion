@@ -54,9 +54,22 @@ einops  0.3.0
 
 图五
 
-## 训练好的权重
+## 训练
 
-- 最佳模型：`checkpoints/best_ckpt.pt`
+训练命令：
+```bash
+python main_cd.py --img_size ${img_size} --checkpoint_root ${checkpoint_root} --lr_policy ${lr_policy} --split ${split} --split_val ${split_val} --net_G ${net_G} --gpu_ids ${gpus} --max_epochs ${max_epochs} --project_name ${project_name} --batch_size ${batch_size} --data_name ${data_name}  --lr ${lr}
+```
+
+**主要参数：**
+
+- batch_size:8
+- max_epochs:200
+- lr:0.001
+
+图六
+
+## 训练好的权重
 
 - 验证集精度：
 ```
@@ -73,24 +86,15 @@ einops  0.3.0
 -recall_1: 0.72070 
 ```
 
-## 结果展示
+## 测试与可视化
 
-图四
-
-## 训练
-
-训练命令：
+测试命令：
 ```bash
-python main_cd.py --img_size ${img_size} --checkpoint_root ${checkpoint_root} --lr_policy ${lr_policy} --split ${split} --split_val ${split_val} --net_G ${net_G} --gpu_ids ${gpus} --max_epochs ${max_epochs} --project_name ${project_name} --batch_size ${batch_size} --data_name ${data_name}  --lr ${lr}
+python eval_cd.py --split ${split} --net_G ${net_G} --checkpoint_name ${checkpoint_name} --gpu_ids ${gpus} --project_name ${project_name} --data_name ${data_name}
 ```
 
-**主要参数：**
-
-- batch_size:8
-- max_epochs:200
-- lr:0.001
-
-图六
+测试结果示例：
+图七
 
 ## 测试我自己的数据
 
