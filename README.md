@@ -101,5 +101,6 @@ python eval_cd.py --split ${split} --net_G ${net_G} --checkpoint_name ${checkpoi
 ## 结果截图
 
 
-
+## 参考
+- https://github.com/justchenhao/BIT_CD
 
