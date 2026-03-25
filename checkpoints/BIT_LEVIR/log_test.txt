@@ -1,0 +1,8 @@
+================ (Mon Mar 23 17:11:00 2026) ================
+gpu_ids: [0] project_name: BIT_LEVIR print_models: False num_workers: 4 dataset: CDDataset data_name: LEVIR batch_size: 8 split: test img_size: 256 n_class: 2 net_G: base_transformer_pos_s4_dd8_dedim8 checkpoint_name: best_ckpt.pt checkpoint_dir: checkpoints\BIT_LEVIR vis_dir: vis\BIT_LEVIR loading last checkpoint...
+Eval Historical_best_acc = 0.9469 (at epoch 183)
+
+Begin evaluation...
+Is_training: False. [1,16],  running_mf1: 0.57380
+acc: 0.94999 miou: 0.48876 mf1: 0.51402 iou_0: 0.94992 iou_1: 0.02760 F1_0: 0.97431 F1_1: 0.05373 precision_0: 0.95037 precision_1: 0.74619 recall_0: 0.99949 recall_1: 0.02787 
+
